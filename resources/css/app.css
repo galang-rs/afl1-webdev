@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    /* Colors - Slush Sticker Universe */
+    --color-carbon: #000000;
+    --color-paper-white: #ffffff;
+    --color-sky-wash: #dceeff;
+    --color-concrete-gray: #cccccc;
+    --color-soft-mist: #e9e9e9;
+    --color-electric-blue: #4da2ff;
+    --color-mint-pop: #55db9c;
+    --color-lavender: #e9ccff;
+    --color-ember: #fb4903;
+    --color-sunburst: #ffd731;
+    --color-voltage-violet: #5c4ade;
+
+    /* Typography */
+    --font-lateral: 'Antonio', 'Impact', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-aeonik: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+    /* Border Radii */
+    --radius-pill: 1600px;
+    --radius-card: 24px;
+    --radius-card-lg: 40px;
+    --radius-sticker: 20px;
+}
+
+/* Base resets & typography */
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-aeonik);
+    background-color: var(--color-paper-white);
+    color: var(--color-carbon);
+}
+
+body {
+    background-color: var(--color-paper-white);
+    color: var(--color-carbon);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Slush Hand-Cut Sticker Outlines & Strict No-Shadow Rules */
+.sticker-border {
+    border: 1px solid #000000;
+}
+
+.sticker-pill {
+    border: 1px solid #000000;
+    border-radius: 1600px;
+}
+
+.sticker-card {
+    border: 1px solid #000000;
+    border-radius: 24px;
+    background-color: #ffffff;
+}
+
+.sticker-card-lg {
+    border: 1px solid #000000;
+    border-radius: 40px;
+    background-color: #ffffff;
+}
+
+/* Lateral Display Sculptural Headings */
+.font-display {
+    font-family: var(--font-lateral);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+}
+
+/* =========================================================
+   Fluid Responsive Typography (clamp-based, no fixed steps)
+   Scales smoothly from 375px mobile to 1440px desktop.
+   ========================================================= */
+
+/* Hero utama: nama besar di halaman depan */
+.text-fluid-hero {
+    font-size: clamp(2.25rem, 2rem + 5vw, 6.5rem);
+}
+
+/* Page header: judul utama tiap halaman (TENTANG SAYA, PORTOFOLIO, dll.) */
+.text-fluid-page {
+    font-size: clamp(2rem, 1.5rem + 4.5vw, 5rem);
+}
+
+/* Section title: judul section dalam halaman (PROYEK UNGGULAN, ARTIKEL TERBARU) */
+.text-fluid-section {
+    font-size: clamp(1.75rem, 1.25rem + 3.5vw, 3.75rem);
+}
+
+/* Subsection / card title: judul kartu atau sub-bagian */
+.text-fluid-card {
+    font-size: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+}
+
+/* Detail page title: judul di halaman detail blog/portfolio */
+.text-fluid-detail {
+    font-size: clamp(1.375rem, 0.875rem + 3vw, 3.25rem);
+}
+
+/* Small heading: sub-judul kecil di dalam kartu */
+.text-fluid-sm {
+    font-size: clamp(1.125rem, 0.875rem + 1.5vw, 2rem);
+}
+
+/* Metric / stat number */
+.text-fluid-stat {
+    font-size: clamp(2rem, 1.5rem + 3.5vw, 4.5rem);
+}
+
+.font-ui {
+    font-family: var(--font-aeonik);
+}
+
+/* Marquee Infinite Animation */
+@keyframes marqueeLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee-continuous {
+    display: flex;
+    width: max-content;
+    animation: marqueeLeft 28s linear infinite;
+}
+
+.animate-marquee-continuous:hover {
+    animation-play-state: paused;
+}
+
+/* Sticker Hover Subtle Lift Without Box-Shadow */
+.sticker-hover {
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sticker-hover:hover {
+    transform: translateY(-3px) scale(1.01);
+}
+
+.sticker-badge-hover {
+    transition: transform 0.15s ease-in-out;
+}
+
+.sticker-badge-hover:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+/* Custom Selection */
+::selection {
+    background-color: #ffd731;
+    color: #000000;
+}
